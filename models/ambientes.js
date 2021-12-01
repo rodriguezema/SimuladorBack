@@ -7,7 +7,7 @@ module.exports = (sequelize,type) => {
             },
         descripcion: type.STRING,
         volumen: type.INTEGER,
-        clasificacion: type.INTEGER,
+        clasificacion: type.STRING,
         id_inmueble: type.INTEGER
     })
     return Ambiente

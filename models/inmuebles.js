@@ -9,7 +9,8 @@ module.exports = (sequelize,type) => {
         cant_personas: type.INTEGER,
         antiguedad: type.INTEGER,
         cp: type.INTEGER,
-        servicio: type.STRING
+        servicio: type.STRING,
+        id_user: type.INTEGER
     })
     return Inmueble
 }

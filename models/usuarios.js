@@ -15,11 +15,8 @@ module.exports = (sequelize, type) => {
         },
         email: {
             type: type.STRING,
-            allowNull: true
-        },
-        password: {
-            type: type.STRING,
-            allowNull: true
+            allowNull: true,
+            unique: true
         },
         rol: type.STRING
     })

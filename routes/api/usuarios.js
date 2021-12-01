@@ -14,4 +14,16 @@ router.post('/', async (req,res) => {
     }
 });
 
+
+//GET USER BY MAIL
+router.get('/:unCorreo', async (req,res) => {
+    const usuario = await Usuario.findAll({
+        where: {
+            email: req.params.unCorreo
+        }
+    });
+    
+    res.json(usuario)
+});
+
 module.exports = router;

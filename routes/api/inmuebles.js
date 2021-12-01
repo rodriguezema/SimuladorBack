@@ -7,6 +7,16 @@ router.get('/', async (req,res) => {
     res.json(inmuebles)
 });
 
+//RECUPERA TODOS LOS INMUEBLES DE UN USUARIO
+router.get('/:id', async (req,res) => {
+    const inmueble = await Inmueble.findAll({
+        where: {
+            id_user: req.params.id
+        }
+    });
+    res.json(inmueble)
+});
+
 // CARGAR UN INMUEBLE
 router.post('/', async (req,res) => {
     console.log(req.body);
@@ -46,7 +56,6 @@ router.delete('/:idInmueble', async (req,res) => {
         res.json({status: res.statusCode, message: "Error."})
     }
 });
-
 
 
 module.exports = router;

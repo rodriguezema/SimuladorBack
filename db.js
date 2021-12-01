@@ -21,6 +21,7 @@ const Ambiente = Ambientes(sequelize,Sequelize);
 // Artefacto.belongsTo(Inmueble,{foreignKey: 'id_inmueble'})
 // Inmueble.hasMany(Artefacto, {foreignKey: 'id_inmueble'})
 
+
 sequelize.sync({force: false})
     .then(()=> {
         console.log('Tablas Sincronizadas');
