@@ -6,21 +6,16 @@ const Artefactos = require('./models/artefactos')
 const Ambientes = require('./models/ambientes')
 
 
-const sequelize = new Sequelize('sql10455143','sql10455143','caLhDMTKvd',{
+const sequelize = new Sequelize('sql10469483','sql10469483','Bgbv3epkYH',{
     host: 'sql10.freesqldatabase.com',
     dialect: 'mysql',
+    port:3306,
 })
 
 const Usuario = Usuarios(sequelize,Sequelize);
 const Inmueble = Inmuebles(sequelize,Sequelize);
 const Artefacto = Artefactos(sequelize,Sequelize);
 const Ambiente = Ambientes(sequelize,Sequelize);
-
-
-//Creo la fk (Un inmueble tiene muchos artefactos, un artefacto pertenece a un inmueble)
-// Artefacto.belongsTo(Inmueble,{foreignKey: 'id_inmueble'})
-// Inmueble.hasMany(Artefacto, {foreignKey: 'id_inmueble'})
-
 
 sequelize.sync({force: false})
     .then(()=> {
@@ -30,4 +25,11 @@ sequelize.sync({force: false})
 module.exports = {
     Inmueble, Usuario, Artefacto, Ambiente
 }
+
+
+// Host: sql10.freesqldatabase.com
+// Database name: sql10469483
+// Database user: sql10469483
+// Database password: Bgbv3epkYH
+// Port number: 3306
 

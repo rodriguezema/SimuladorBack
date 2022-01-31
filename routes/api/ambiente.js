@@ -7,6 +7,16 @@ router.get('/', async (req,res) => {
     res.json(ambientes)
 });
 
+//RECUPERA TODOS LOS INMUEBLES DE UN USUARIO
+router.get('/:id', async (req,res) => {
+    const ambiente = await Ambiente.findAll({
+        where: {
+            id_inmueble: req.params.id
+        }
+    });
+    res.json(ambiente)
+});
+
 // CARGAR UN AMBIENTE
 router.post('/', async (req,res) => {
     console.log(req.body);
