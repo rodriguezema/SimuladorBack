@@ -8,12 +8,9 @@ module.exports = (sequelize,type) => {
         nombre: type.STRING,
         categoria: type.STRING,
         energia: type.STRING,
-        consumo: type.STRING,
-        calor: type.STRING,
-        promedio: type.STRING,
-        id_inmueble: {
-            type: type.INTEGER,
-            allowNull: false
-        }
+        consumo: type.INTEGER,
+        calor: type.INTEGER,
+        promedio: type.INTEGER,
+        id_ambiente: type.INTEGER,  
     })
 }

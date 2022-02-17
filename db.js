@@ -4,9 +4,10 @@ const Inmuebles = require('./models/inmuebles')
 const Usuarios = require('./models/usuarios')
 const Artefactos = require('./models/artefactos')
 const Ambientes = require('./models/ambientes')
+const Simulaciones = require('./models/simulaciones')
 
 
-const sequelize = new Sequelize('sql10469483','sql10469483','Bgbv3epkYH',{
+const sequelize = new Sequelize('sql10472727','sql10472727','24bBuE84hQ',{
     host: 'sql10.freesqldatabase.com',
     dialect: 'mysql',
     port:3306,
@@ -16,6 +17,7 @@ const Usuario = Usuarios(sequelize,Sequelize);
 const Inmueble = Inmuebles(sequelize,Sequelize);
 const Artefacto = Artefactos(sequelize,Sequelize);
 const Ambiente = Ambientes(sequelize,Sequelize);
+const Simulacion = Simulaciones(sequelize,Sequelize);
 
 sequelize.sync({force: false})
     .then(()=> {
@@ -23,7 +25,7 @@ sequelize.sync({force: false})
     })
 
 module.exports = {
-    Inmueble, Usuario, Artefacto, Ambiente
+    Inmueble, Usuario, Artefacto, Ambiente, Simulacion
 }
 
 
